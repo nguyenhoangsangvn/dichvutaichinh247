@@ -57,4 +57,20 @@ const appData = [
             <p>Tamo vay dễ lắm...</p>
         `
     },
+
+    
+    {
+        id: "vayvnd",
+        name: "VayVnd",
+        logo: "https://storage.googleapis.com/hyperlead-public/production/assets/offers/logo/logo-vayvnd.png",
+        desc: "",
+        limit: "10 Triệu",
+        rate: "0% Lãi suất",
+        affLink: "https://hl-link.net/55COP10",
+        reviewLink: "review.html?id=vayvnd",
+        badge: "MỚI",
+        badgeColor: "bg-red-100 text-red-700",
+        isHot: true,
+        content: `<p><strong>VayVND</strong>&nbsp;— Dịch vụ tư vấn và cung cấp giải pháp tài chính nhanh chóng thông qua giao dịch trực tuyến.</p><ul><li>Hạn mức vay: từ 1.000.000 -&nbsp;15.000.000 VNĐ</li><li>Kỳ hạn khoản vay trả góp: từ 90 ngày đến 180 ngày</li><li>Lãi suất: 1.5%/ngày</li><li>Khoản vay lần đầu tiên: chỉ chuyển qua tài khoản ngân hàng / thẻ ngân hàng với điều kiện tên tài khoản / thẻ ngân hàng trùng với tên trong ứng dụng (và ID ứng dụng).</li></ul><p><span style=\"background-color: rgb(248, 248, 248); color: rgb(110, 107, 123);\">Bước 1: KH truy cập Landing Page thông qua link HyperLead;</span></p><p><span style=\"background-color: rgb(248, 248, 248); color: rgb(110, 107, 123);\">Bước 2: KH nhập SĐT và xác nhận OTP ; chọn giá trị khoản vay, thời hạn vay,</span></p><p><span style=\"background-color: rgb(248, 248, 248); color: rgb(110, 107, 123);\">Bước 3: KH điền thông tin cá nhân, nghề nghiệp, thu nhập, người thân tham chiếu, tài khoản ngân hàng;</span></p><p><span style=\"background-color: rgb(248, 248, 248); color: rgb(110, 107, 123);\">Bước 4: KH upload 2 mặt CMND/CCCD và ảnh chân dung;</span></p><p><span style=\"background-color: rgb(248, 248, 248); color: rgb(110, 107, 123);\">Bước 5: KH hoàn tất đăng ký khoản vay và nhận được thông báo (chấp nhận hoặc từ chối cho vay) =&gt; Ghi nhận đơn chờ duyệt</span></p><p><span style=\"background-color: rgb(248, 248, 248); color: rgb(110, 107, 123);\">Bước 6: KH sẽ được tư vấn và thẩm định bởi nhân viên của VayVND</span></p><p><strong style=\"background-color: rgb(248, 248, 248); color: rgb(218, 45, 138);\">Bước 7: KH được giải ngân và nhận tiền thành công =&gt; Ghi nhận đơn thành công</strong></p>`
+    },
 ];
