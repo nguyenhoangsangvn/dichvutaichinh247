@@ -39,4 +39,22 @@ const appData = [
             <p>Hệ thống sẽ tự tìm các đơn vị chấp nhận hồ sơ của bạn.</p>
         `
     }
+
+    {
+        id: "tamo", // ID mới
+        name: "Tamo",
+        logo: "LINK_LOGO",
+        desc: "Mô tả ngắn...",
+        limit: "7 Triệu",
+        rate: "0%",
+        affLink: "LINK_KIEM_TIEN",
+        reviewLink: "review.html?id=tamo", // ⚠️ Quan trọng: id phải khớp với id ở trên
+        badge: "MỚI",
+        badgeColor: "bg-yellow-100 text-yellow-700",
+        isHot: true,
+        content: `
+            <p>Viết bài review về Tamo ở đây...</p>
+            <p>Tamo vay dễ lắm...</p>
+        `
+    },
 ];
