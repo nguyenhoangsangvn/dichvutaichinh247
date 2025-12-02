@@ -41,5 +41,20 @@ const appData = [
         badgeColor: "bg-purple-100 text-purple-700",
         isHot: false
     }
+
+    {
+        id: "tamo",
+        name: "Tamo", // Tên App
+        logo: "LINK_ANH_LOGO_TAMO", // Link ảnh logo
+        desc: "Duyệt vay tự động 24/7",
+        limit: "7 Triệu",
+        rate: "0% 30 ngày",
+        affLink: "LINK_AFFILIATE_TAMO_CUA_ONG", // Link kiếm tiền
+        reviewLink: "review-tamo.html", // Tên file bài viết (sẽ tạo ở bước 2)
+        badge: "MỚI",
+        badgeColor: "bg-yellow-100 text-yellow-700",
+        isHot: true // Để true thì nó sẽ hiện lên đầu Sidebar các bài viết khác
+    }, 
+
     // Muốn thêm app thì copy nguyên cục {} dán xuống dưới này
 ];
