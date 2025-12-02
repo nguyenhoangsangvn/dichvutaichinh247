@@ -1,4 +1,4 @@
-// data.js - Kho dữ liệu App
+// data.js - KHO DỮ LIỆU
 const appData = [
     {
         id: "cayvang",
@@ -7,10 +7,10 @@ const appData = [
         desc: "Vay nhanh lãi 0% - Top 1 hiện nay",
         limit: "10 Triệu",
         rate: "0% / 7 ngày",
-        // Thay Link Affiliate của ông vào đây
+        // Link kiếm tiền (Affiliate) thay vào đây
         affLink: "https://dinos.scaletrk.com/click?a=2801&o=935",
-        // Link bài review chi tiết (để sau làm tiếp)
-        reviewLink: "#",
+        // Link bài viết review (Tên file HTML ông sẽ tạo ở bước 4)
+        reviewLink: "review-cay-vang.html",
         badge: "DUYỆT 99%",
         badgeColor: "bg-green-100 text-green-700",
         isHot: true
@@ -23,7 +23,7 @@ const appData = [
         limit: "15 Triệu",
         rate: "Thấp nhất",
         affLink: "https://ladipage.dinos.click/click?a=2801&o=161",
-        reviewLink: "#",
+        reviewLink: "#", // Sau này tạo file review-jeff.html thì sửa lại chỗ này
         badge: "AUTO DUYỆT",
         badgeColor: "bg-blue-100 text-blue-700",
         isHot: true
@@ -40,6 +40,6 @@ const appData = [
         badge: "UY TÍN",
         badgeColor: "bg-purple-100 text-purple-700",
         isHot: false
-    },
-    // Muốn thêm app thì copy đoạn trên dán xuống đây
+    }
+    // Muốn thêm app thì copy nguyên cục {} dán xuống dưới này
 ];
