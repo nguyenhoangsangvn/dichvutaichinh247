@@ -38,7 +38,7 @@ const appData = [
             <p class="mb-4">Jeff App không phải là người cho vay, mà là <strong>sàn kết nối tài chính</strong>.</p>
             <p>Hệ thống sẽ tự tìm các đơn vị chấp nhận hồ sơ của bạn.</p>
         `
-    }
+    },
 
     {
         id: "tamo", // ID mới
