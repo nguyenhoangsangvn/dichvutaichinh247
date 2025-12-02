@@ -24,6 +24,16 @@
                         'card': '0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
                         'float': '0 25px 50px -12px rgba(0, 0, 0, 0.1)',
                         'soft-xl': '0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02)',
+                    },
+                    // --- THÊM HIỆU ỨNG CHẠY LOGO (MARQUEE) ---
+                    animation: {
+                        marquee: 'marquee 40s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        }
                     }
                 }
             }
@@ -115,17 +125,36 @@
         </div>
     </section>
 
-    <div class="py-16 bg-white">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-xs font-bold text-slate-300 uppercase tracking-[0.2em] mb-8">Đối tác chiến lược</p>
-            <div class="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-                <span class="font-bold text-2xl text-slate-600 flex items-center gap-2"><i class="fa-solid fa-building-columns"></i> VPBank</span>
-                <span class="font-bold text-2xl text-slate-600 flex items-center gap-2"><i class="fa-solid fa-wallet"></i> MoMo</span>
-                <span class="font-bold text-2xl text-slate-600 flex items-center gap-2"><i class="fa-solid fa-credit-card"></i> FE Credit</span>
+    <div class="py-12 bg-white border-t border-b border-gray-100 overflow-hidden">
+        <div class="container mx-auto px-4 text-center mb-8">
+            <p class="text-xs font-bold text-slate-300 uppercase tracking-[0.2em]">Mạng lưới 20+ Đối tác chiến lược</p>
+        </div>
+        
+        <div class="relative w-full flex overflow-hidden group">
+            <div class="animate-marquee whitespace-nowrap flex items-center gap-16 min-w-full pl-4">
+                <span class="text-2xl font-bold text-slate-400 flex items-center gap-2 hover:text-primary transition cursor-default"><i class="fa-solid fa-building-columns"></i> Vietcombank</span>
+                <span class="text-2xl font-bold text-slate-400 flex items-center gap-2 hover:text-primary transition cursor-default"><i class="fa-solid fa-building-columns"></i> Techcombank</span>
+                <span class="text-2xl font-bold text-slate-400 flex items-center gap-2 hover:text-primary transition cursor-default"><i class="fa-solid fa-building-columns"></i> VPBank</span>
+                <span class="text-2xl font-bold text-slate-400 flex items-center gap-2 hover:text-primary transition cursor-default"><i class="fa-solid fa-building-columns"></i> MBBank</span>
+                <span class="text-2xl font-bold text-slate-400 flex items-center gap-2 hover:text-primary transition cursor-default"><i class="fa-solid fa-building-columns"></i> TPBank</span>
+                <span class="text-2xl font-bold text-slate-400 flex items-center gap-2 hover:text-primary transition cursor-default"><i class="fa-solid fa-building-columns"></i> VIB</span>
+                <span class="text-2xl font-bold text-slate-400 flex items-center gap-2 hover:text-primary transition cursor-default"><i class="fa-solid fa-wallet"></i> MoMo</span>
+                <span class="text-2xl font-bold text-slate-400 flex items-center gap-2 hover:text-primary transition cursor-default"><i class="fa-solid fa-wallet"></i> ZaloPay</span>
+                <span class="text-2xl font-bold text-slate-400 flex items-center gap-2 hover:text-primary transition cursor-default"><i class="fa-solid fa-wallet"></i> ViettelMoney</span>
+                <span class="text-2xl font-bold text-slate-400 flex items-center gap-2 hover:text-primary transition cursor-default"><i class="fa-solid fa-credit-card"></i> FE Credit</span>
+                <span class="text-2xl font-bold text-slate-400 flex items-center gap-2 hover:text-primary transition cursor-default"><i class="fa-solid fa-credit-card"></i> Home Credit</span>
+                <span class="text-2xl font-bold text-slate-400 flex items-center gap-2 hover:text-primary transition cursor-default"><i class="fa-solid fa-credit-card"></i> Shinhan Finance</span>
+                <span class="text-2xl font-bold text-slate-400 flex items-center gap-2 hover:text-primary transition cursor-default"><i class="fa-solid fa-credit-card"></i> Mcredit</span>
+                <span class="text-2xl font-bold text-slate-400 flex items-center gap-2 hover:text-primary transition cursor-default"><i class="fa-solid fa-credit-card"></i> Mirae Asset</span>
+
+                <span class="text-2xl font-bold text-slate-400 flex items-center gap-2 hover:text-primary transition cursor-default"><i class="fa-solid fa-building-columns"></i> Vietcombank</span>
+                <span class="text-2xl font-bold text-slate-400 flex items-center gap-2 hover:text-primary transition cursor-default"><i class="fa-solid fa-building-columns"></i> Techcombank</span>
+                <span class="text-2xl font-bold text-slate-400 flex items-center gap-2 hover:text-primary transition cursor-default"><i class="fa-solid fa-building-columns"></i> VPBank</span>
+                <span class="text-2xl font-bold text-slate-400 flex items-center gap-2 hover:text-primary transition cursor-default"><i class="fa-solid fa-building-columns"></i> MBBank</span>
+                <span class="text-2xl font-bold text-slate-400 flex items-center gap-2 hover:text-primary transition cursor-default"><i class="fa-solid fa-wallet"></i> MoMo</span>
             </div>
         </div>
     </div>
-
     <section id="loi-ich" class="py-24 bg-bg-soft">
         <div class="container mx-auto px-4">
             <div class="text-center mb-20">
@@ -247,15 +276,15 @@
         </div>
     </section>
 
-    <footer class="bg-primary text-slate-400 pt-20 pb-10">
+    <footer class="bg-primary text-slate-400 pt-16 pb-8 mt-auto">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 text-center md:text-left">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 text-center md:text-left">
                 <div class="col-span-1 md:col-span-1">
                     <a href="#" class="flex items-center justify-center md:justify-start gap-2 mb-6 text-white">
                         <i class="fa-solid fa-vault text-2xl text-accent"></i>
                         <span class="font-bold text-xl">TaiChinh247</span>
                     </a>
-                    <p class="text-sm leading-relaxed opacity-80">Cổng thông tin tài chính độc lập. Kết nối khách hàng với các giải pháp tín dụng an toàn và minh bạch nhất.</p>
+                    <p class="text-xs leading-relaxed opacity-70">Cổng thông tin tài chính độc lập. Kết nối khách hàng với các giải pháp tín dụng an toàn và minh bạch nhất.</p>
                 </div>
                 <div><h4 class="font-bold text-white mb-5 text-xs uppercase tracking-wider">Sản Phẩm</h4><ul class="space-y-3 text-sm"><li><a href="#" class="hover:text-accent transition">Vay tín chấp</a></li><li><a href="#" class="hover:text-accent transition">Mở thẻ tín dụng</a></li></ul></div>
                 <div><h4 class="font-bold text-white mb-5 text-xs uppercase tracking-wider">Điều Khoản</h4><ul class="space-y-3 text-sm"><li><a href="#" class="hover:text-accent transition">Chính sách bảo mật</a></li><li><a href="#" class="hover:text-accent transition">Quy định sử dụng</a></li></ul></div>
