@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Công Cụ Tạo Bài Viết - TaiChinh247</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-8 font-sans">
+
+    <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+        <h1 class="text-2xl font-bold mb-6 text-blue-600">🛠️ Trình Tạo App Mới (Không cần code)</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+                <label class="block font-bold mb-2">Tên App</label>
+                <input type="text" id="name" class="w-full border p-2 rounded" placeholder="Ví dụ: Tamo">
+            </div>
+            <div>
+                <label class="block font-bold mb-2">Mã ID (Viết liền không dấu)</label>
+                <input type="text" id="id" class="w-full border p-2 rounded" placeholder="Ví dụ: tamo">
+            </div>
+            <div>
+                <label class="block font-bold mb-2">Link Logo (Ảnh)</label>
+                <input type="text" id="logo" class="w-full border p-2 rounded" placeholder="https://...">
+            </div>
+            <div>
+                <label class="block font-bold mb-2">Link Kiếm Tiền (Affiliate)</label>
+                <input type="text" id="affLink" class="w-full border p-2 rounded" placeholder="https://dinos...">
+            </div>
+            <div>
+                <label class="block font-bold mb-2">Hạn mức</label>
+                <input type="text" id="limit" class="w-full border p-2 rounded" value="10 Triệu">
+            </div>
+            <div>
+                <label class="block font-bold mb-2">Lãi suất</label>
+                <input type="text" id="rate" class="w-full border p-2 rounded" value="0% Lãi suất">
+            </div>
+            <div class="col-span-2">
+                <label class="block font-bold mb-2">Mô tả ngắn (Hiện ở trang chủ)</label>
+                <input type="text" id="desc" class="w-full border p-2 rounded" placeholder="Duyệt nhanh 15 phút...">
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <label class="block font-bold mb-2">Bài viết Review chi tiết</label>
+            <div id="editor" class="h-64 bg-white"></div>
+        </div>
+
+        <button onclick="generateCode()" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 w-full mb-6">
+            🚀 TẠO CODE NGAY
+        </button>
+
+        <div class="bg-gray-800 p-4 rounded-lg relative">
+            <label class="block text-gray-400 text-xs mb-2">Kết quả (Copy đoạn này dán vào data.js):</label>
+            <textarea id="output" class="w-full h-48 bg-gray-900 text-green-400 font-mono text-sm p-2 rounded border-none focus:ring-0" readonly></textarea>
+            <button onclick="copyToClipboard()" class="absolute top-4 right-4 bg-white text-black text-xs px-3 py-1 rounded font-bold hover:bg-gray-200">Copy</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script>
+        // Khởi tạo trình soạn thảo
+        var quill = new Quill('#editor', {
+            theme: 'snow',
+            placeholder: 'Viết bài review ở đây (giống Word)...'
+        });
+
+        function generateCode() {
+            // Lấy dữ liệu từ form
+            const id = document.getElementById('id').value.trim();
+            const name = document.getElementById('name').value.trim();
+            const logo = document.getElementById('logo').value.trim();
+            const affLink = document.getElementById('affLink').value.trim();
+            const limit = document.getElementById('limit').value.trim();
+            const rate = document.getElementById('rate').value.trim();
+            const desc = document.getElementById('desc').value.trim();
+            
+            // Lấy nội dung HTML từ bộ soạn thảo
+            let content = quill.root.innerHTML;
+            // Xử lý xuống dòng để code JS không bị lỗi
+            content = content.replace(/"/g, '\\"'); // Escape dấu nháy kép
+
+            // Tạo đoạn code JSON mẫu
+            const code = `
+    {
+        id: "${id}",
+        name: "${name}",
+        logo: "${logo}",
+        desc: "${desc}",
+        limit: "${limit}",
+        rate: "${rate}",
+        affLink: "${affLink}",
+        reviewLink: "review.html?id=${id}",
+        badge: "MỚI",
+        badgeColor: "bg-red-100 text-red-700",
+        isHot: true,
+        content: \`${content}\`
+    },`;
+
+            // Xuất ra màn hình
+            document.getElementById('output').value = code;
+        }
+
+        function copyToClipboard() {
+            const copyText = document.getElementById("output");
+            copyText.select();
+            document.execCommand("copy");
+            alert("Đã copy! Giờ qua file data.js dán vào là xong.");
+        }
+    </script>
+</body>
+</html>
