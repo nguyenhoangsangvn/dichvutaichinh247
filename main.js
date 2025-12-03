@@ -1,28 +1,25 @@
-// main.js - XỬ LÝ HIỂN THỊ (BẢN FINAL CLEAN)
-
-// 1. Render Danh Sách App (Grid)
+aa// main.js - BẢN CHUẨN
 function renderHomeGrid(containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
     let html = '';
     appData.forEach(app => {
-        // Xử lý màu badge tinh tế hơn
-        let badgeClass = "bg-gray-100 text-gray-600";
-        if (app.badge.includes("0%")) badgeClass = "bg-emerald-50 text-emerald-700 border border-emerald-100";
-        if (app.badge.includes("DUYỆT")) badgeClass = "bg-blue-50 text-blue-700 border border-blue-100";
-        if (app.badge.includes("AUTO")) badgeClass = "bg-indigo-50 text-indigo-700 border border-indigo-100";
+        // Xử lý màu badge
+        let badgeClass = "bg-slate-100 text-slate-600";
+        if (app.badge.includes("0%")) badgeClass = "bg-green-100 text-green-700";
+        if (app.badge.includes("DUYỆT")) badgeClass = "bg-blue-100 text-blue-700";
+        if (app.badge.includes("AUTO")) badgeClass = "bg-indigo-100 text-indigo-700";
 
         html += `
-        <div class="group bg-white rounded-xl border border-slate-200 p-6 hover:shadow-hover hover:border-blue-300 transition-all duration-300 flex flex-col h-full relative">
-            
+        <div class="group bg-white rounded-xl border border-slate-200 p-6 hover:shadow-lg transition-all duration-300 relative flex flex-col h-full">
             <a href="${app.reviewLink}" class="absolute inset-0 z-10" title="Xem chi tiết"></a>
 
-            <div class="flex justify-between items-start mb-5">
+            <div class="flex justify-between items-start mb-4">
                 <div class="w-14 h-14 rounded-lg border border-slate-100 p-1 bg-white flex items-center justify-center shadow-sm">
                     <img src="${app.logo}" alt="${app.name}" class="w-full h-full object-contain rounded">
                 </div>
-                <span class="${badgeClass} text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wide">
+                <span class="${badgeClass} text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wide z-20">
                     ${app.badge}
                 </span>
             </div>
@@ -35,20 +32,20 @@ function renderHomeGrid(containerId) {
                     <span class="text-slate-400 ml-1 font-medium">(4.9)</span>
                 </div>
 
-                <div class="space-y-3 mb-6">
-                    <div class="flex justify-between text-sm border-b border-dashed border-slate-100 pb-2">
-                        <span class="text-slate-500 text-xs font-medium">Hạn mức</span>
+                <div class="space-y-2 mb-6 border-t border-dashed border-slate-100 pt-3">
+                    <div class="flex justify-between text-sm">
+                        <span class="text-slate-500 text-xs">Hạn mức</span>
                         <span class="font-bold text-slate-900">${app.limit}</span>
                     </div>
-                    <div class="flex justify-between text-sm border-b border-dashed border-slate-100 pb-2">
-                        <span class="text-slate-500 text-xs font-medium">Lãi suất</span>
+                    <div class="flex justify-between text-sm">
+                        <span class="text-slate-500 text-xs">Lãi suất</span>
                         <span class="font-bold text-green-600">${app.rate}</span>
                     </div>
                 </div>
             </div>
 
-            <a href="${app.affLink}" target="_blank" rel="nofollow" class="relative z-20 w-full block bg-primary hover:bg-blue-800 text-white text-center font-bold py-3 rounded-lg transition-colors text-sm shadow-sm hover:shadow-md">
-                Đăng Ký Hồ Sơ
+            <a href="${app.affLink}" target="_blank" rel="nofollow" class="relative z-20 w-full block bg-slate-900 hover:bg-blue-700 text-white text-center font-bold py-3 rounded-lg transition-colors text-sm shadow-sm">
+                Đăng Ký Ngay
             </a>
         </div>
         `;
@@ -56,7 +53,7 @@ function renderHomeGrid(containerId) {
     container.innerHTML = html;
 }
 
-// 2. Render Sidebar (Giữ nguyên cho trang bài viết)
+// Render Sidebar (giữ nguyên)
 function renderSidebar(containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
@@ -71,9 +68,9 @@ function renderSidebar(containerId) {
             </div>
             <div class="flex-1 min-w-0">
                 <h4 class="font-bold text-slate-900 text-sm truncate group-hover:text-blue-700 transition">${app.name}</h4>
-                <p class="text-[10px] text-slate-500 font-medium">${app.limit} • ${app.rate}</p>
+                <p class="text-[10px] text-slate-500 font-medium">${app.limit}</p>
             </div>
-            <a href="${app.affLink}" target="_blank" rel="nofollow" class="relative z-20 bg-primary text-white text-[10px] font-bold px-3 py-2 rounded hover:bg-blue-800 transition">Vay</a>
+            <a href="${app.affLink}" target="_blank" rel="nofollow" class="relative z-20 bg-slate-900 text-white text-[10px] font-bold px-3 py-2 rounded hover:bg-blue-800 transition">Vay</a>
         </div>`;
     });
     container.innerHTML = html;
