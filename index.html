@@ -3,166 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>TaiChinh247 - Vay Thông Minh, Duyệt Tức Thì</title>
+    <title>TaiChinh247 - Giải Pháp Tài Chính Toàn Diện</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    fontFamily: { sans: ['Be Vietnam Pro', 'sans-serif'] },
                     colors: {
-                        brand: '#0B1121',   // Đen xanh rất sâu
-                        primary: '#2563EB', // Xanh chủ đạo
-                        accent: '#06B6D4',  // Cyan điểm nhấn
+                        brand: '#0F172A', // Navy
+                        accent: '#2563EB', // Blue
+                        bg: '#F8FAFC',
                     },
                     boxShadow: {
-                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
-                        'neon': '0 0 20px rgba(37, 99, 235, 0.2)',
+                        'float': '0 20px 40px -10px rgba(0, 0, 0, 0.1)',
                     },
-                    animation: {
-                        marquee: 'marquee 40s linear infinite',
-                        'blob': 'blob 7s infinite',
-                    },
-                    keyframes: {
-                        marquee: { '0%': { transform: 'translateX(0%)' }, '100%': { transform: 'translateX(-100%)' } },
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
-                        }
-                    }
+                    animation: { marquee: 'marquee 40s linear infinite' },
+                    keyframes: { marquee: { '0%': { transform: 'translateX(0%)' }, '100%': { transform: 'translateX(-100%)' } } }
                 }
             }
         }
     </script>
     <style>
-        body { background-color: #F8FAFC; color: #334155; overflow-x: hidden; }
-        /* Hiệu ứng kính */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-        }
-        /* Slider Style mới */
+        body { background-color: #F8FAFC; color: #334155; }
         input[type=range] { -webkit-appearance: none; background: transparent; cursor: pointer; }
-        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 28px; width: 28px; border-radius: 50%; background: #2563EB; border: 4px solid #EFF6FF; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3); margin-top: -10px; transition: all 0.2s; }
-        input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.1); box-shadow: 0 4px 15px rgba(37, 99, 235, 0.5); }
-        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 8px; background: #E2E8F0; border-radius: 99px; }
+        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 24px; width: 24px; border-radius: 50%; background: #2563EB; border: 4px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.2); margin-top: -10px; }
+        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; background: #CBD5E1; border-radius: 2px; }
     </style>
 </head>
-<body class="flex flex-col min-h-screen relative">
+<body class="flex flex-col min-h-screen">
 
-    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div class="absolute top-[-10%] left-[-20%] w-[70%] h-[70%] rounded-full bg-blue-200/40 blur-[100px] animate-blob"></div>
-        <div class="absolute bottom-[-10%] right-[-20%] w-[70%] h-[70%] rounded-full bg-cyan-200/40 blur-[100px] animate-blob animation-delay-2000"></div>
-        <div class="absolute top-[40%] left-[30%] w-[50%] h-[50%] rounded-full bg-purple-200/30 blur-[100px] animate-blob animation-delay-4000"></div>
-    </div>
-
-    <header class="fixed top-0 w-full z-50 glass-card h-20 shadow-sm transition-all">
+    <header class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur border-b border-slate-200 h-20 shadow-sm">
         <div class="container mx-auto px-4 h-full flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 bg-gradient-to-tr from-primary to-accent text-white rounded-xl flex items-center justify-center text-xl shadow-neon group-hover:scale-105 transition">
-                    <i class="fa-solid fa-robot"></i>
-                </div>
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-brand text-white rounded-lg flex items-center justify-center text-xl font-bold"><i class="fa-solid fa-vault"></i></div>
                 <div class="flex flex-col">
-                    <span class="font-black text-brand text-xl leading-none tracking-tight">TaiChinh<span class="text-primary">247</span></span>
-                    <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-0.5">AI Finance Platform</span>
+                    <span class="font-extrabold text-brand text-xl leading-none">TaiChinh<span class="text-accent">247</span></span>
+                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">Finance Gateway</span>
                 </div>
             </a>
-
-            <nav class="hidden lg:flex items-center gap-8 font-bold text-sm text-slate-600">
-                <a href="#loi-ich" class="hover:text-primary transition py-2 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-primary after:transition-all">Ưu Điểm</a>
-                <a href="#list-app" class="hover:text-primary transition py-2 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-primary after:transition-all">Gói Vay</a>
-                <a href="#feedback" class="hover:text-primary transition py-2 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-primary after:transition-all">Đánh Giá</a>
+            <nav class="hidden lg:flex items-center gap-8 font-semibold text-sm text-slate-600">
+                <a href="#list-app" class="hover:text-accent transition">Vay Tín Chấp</a>
+                <a href="#loi-ich" class="hover:text-accent transition">Thẻ Tín Dụng</a>
+                <a href="#faq" class="hover:text-accent transition">Hỗ Trợ</a>
             </nav>
-
-            <div class="flex items-center gap-4">
-                 <a href="#list-app" class="hidden md:flex items-center gap-2 bg-brand hover:bg-slate-800 text-white px-6 py-3 rounded-xl text-sm font-bold transition shadow-lg shadow-brand/20 transform hover:-translate-y-0.5">
-                    <i class="fa-solid fa-bolt text-accent"></i> Duyệt Hồ Sơ
-                </a>
-                <button class="lg:hidden text-2xl text-brand"><i class="fa-solid fa-bars-staggered"></i></button>
+            <div class="flex items-center gap-3">
+                <a href="#list-app" class="hidden md:flex bg-red-600 hover:bg-red-700 text-white px-5 py-2.5 rounded-lg text-sm font-bold shadow-sm transition">Đăng Ký Hồ Sơ</a>
+                <button class="lg:hidden text-2xl text-slate-700"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
     </header>
 
-    <section class="pt-36 pb-20 lg:pt-44 lg:pb-32 px-4">
+    <section class="pt-32 pb-10 px-4">
         <div class="container mx-auto">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
-                
-                <div class="w-full lg:w-1/2 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-primary text-sm font-bold mb-8 shadow-sm">
-                        <span class="relative flex h-3 w-3">
-                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                          <span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
-                        </span>
-                        Công nghệ AI Scoring 3.0
+            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-float border border-white flex flex-col lg:flex-row items-center gap-12 lg:gap-20 overflow-hidden relative">
+                <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+
+                <div class="w-full lg:w-5/12 relative z-10 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-accent text-xs font-bold mb-6 border border-blue-100">
+                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                        AI Scoring 2025
                     </div>
-
-                    <h1 class="text-5xl lg:text-7xl font-black text-brand mb-6 leading-tight tracking-tight">
-                        Vay Thông Minh <br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Duyệt Tức Thì</span>
+                    <h1 class="text-3xl md:text-5xl font-black text-brand mb-6 leading-tight">
+                        Giải Pháp Tài Chính <br>
+                        <span class="text-accent">Minh Bạch & Tốc Độ</span>
                     </h1>
-                    
-                    <p class="text-lg text-slate-600 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                        Nền tảng kết nối tài chính thế hệ mới. So sánh và nhận đề xuất hạn mức tín dụng tốt nhất từ 20+ đối tác chỉ trong 30 giây.
+                    <p class="text-slate-500 text-base md:text-lg mb-8 leading-relaxed">
+                        Hệ thống tự động so sánh và đề xuất hạn mức tín dụng tối ưu từ 20+ ngân hàng uy tín.
+                        <span class="block font-bold text-slate-700 mt-2">✅ Duyệt tự động • Giải ngân 24/7.</span>
                     </p>
-
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 font-bold text-sm text-slate-700">
-                        <div class="flex items-center gap-2 glass-card px-4 py-2 rounded-lg"><i class="fa-solid fa-circle-check text-green-500"></i> 99% Duyệt tự động</div>
-                        <div class="flex items-center gap-2 glass-card px-4 py-2 rounded-lg"><i class="fa-solid fa-clock text-primary"></i> Giải ngân 24/7</div>
-                        <div class="flex items-center gap-2 glass-card px-4 py-2 rounded-lg"><i class="fa-solid fa-gift text-accent"></i> 0% Lãi suất kỳ đầu</div>
+                    <div class="flex justify-center lg:justify-start gap-8 border-t border-slate-100 pt-6">
+                        <div><p class="text-2xl font-bold text-brand">99%</p><p class="text-[10px] uppercase font-bold text-slate-400">Duyệt</p></div>
+                        <div><p class="text-2xl font-bold text-brand">15p</p><p class="text-[10px] uppercase font-bold text-slate-400">Xử lý</p></div>
+                        <div><p class="text-2xl font-bold text-brand">0%</p><p class="text-[10px] uppercase font-bold text-slate-400">Lãi đầu</p></div>
                     </div>
                 </div>
 
-                <div class="w-full lg:w-1/2 relative">
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-primary/20 to-accent/20 blur-[80px] rounded-full -z-10"></div>
-
-                    <div class="glass-card rounded-[2.5rem] p-8 md:p-10 shadow-glass relative overflow-hidden ring-1 ring-white/50">
-                        <div class="flex justify-between items-center mb-10 pb-6 border-b border-slate-200/50">
-                            <div>
-                                <h3 class="font-extrabold text-2xl text-brand flex items-center gap-3">
-                                    <i class="fa-solid fa-calculator text-primary"></i> Tính Khoản Vay
-                                </h3>
-                                <p class="text-slate-500 text-sm mt-1 font-medium">Ước tính khoản trả góp hàng tháng</p>
-                            </div>
+                <div class="w-full lg:w-7/12 relative z-10">
+                    <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 md:p-8">
+                        <div class="flex justify-between items-center mb-8 border-b border-slate-200 pb-4">
+                            <h3 class="font-bold text-brand text-lg flex items-center gap-2"><i class="fa-solid fa-calculator text-accent"></i> Dự tính khoản vay</h3>
+                            <span class="bg-yellow-100 text-yellow-700 text-xs font-bold px-3 py-1 rounded-full">0% Lãi suất</span>
                         </div>
-
-                        <div class="space-y-10 mb-10">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                             <div>
-                                <div class="flex justify-between items-end mb-4">
-                                    <span class="text-sm font-bold text-slate-500 uppercase tracking-wider">Số tiền cần vay</span>
-                                    <span class="text-3xl font-black text-primary" id="amount-display">10.000.000 đ</span>
-                                </div>
+                                <div class="flex justify-between mb-3"><span class="text-xs font-bold text-slate-500 uppercase">Số tiền vay</span><span class="text-lg font-bold text-accent" id="amount-display">10.000.000 đ</span></div>
                                 <input type="range" min="1" max="70" value="10" class="w-full" id="amount-range" oninput="calculateLoan()">
-                                <div class="flex justify-between text-xs font-bold text-slate-400 mt-3 px-1"><span>1 Tr</span><span>70 Tr</span></div>
                             </div>
                             <div>
-                                <div class="flex justify-between items-end mb-4">
-                                    <span class="text-sm font-bold text-slate-500 uppercase tracking-wider">Thời hạn vay</span>
-                                    <span class="text-3xl font-black text-primary" id="month-display">12 Tháng</span>
-                                </div>
+                                <div class="flex justify-between mb-3"><span class="text-xs font-bold text-slate-500 uppercase">Thời hạn</span><span class="text-lg font-bold text-accent" id="month-display">12 Tháng</span></div>
                                 <input type="range" min="1" max="36" value="12" class="w-full" id="month-range" oninput="calculateLoan()">
-                                <div class="flex justify-between text-xs font-bold text-slate-400 mt-3 px-1"><span>1 Th</span><span>36 Th</span></div>
                             </div>
                         </div>
-
-                        <div class="bg-gradient-to-br from-slate-50 to-blue-50/50 rounded-2xl p-6 border border-white/60 shadow-inner flex flex-col md:flex-row items-center justify-between gap-6">
+                        <div class="bg-white rounded-xl p-5 border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
                             <div class="text-center md:text-left">
-                                <span class="text-sm text-slate-500 font-bold block mb-1">Trả góp dự kiến/tháng:</span>
-                                <div class="flex items-baseline gap-3 justify-center md:justify-start">
-                                    <div class="text-3xl lg:text-4xl font-black text-brand tracking-tight leading-none" id="monthly-payment">833.333 đ</div>
-                                    <span class="text-sm text-slate-400 line-through font-semibold" id="total-original">958.000 đ</span>
-                                </div>
+                                <span class="text-xs text-slate-500 font-medium block mb-1">Thanh toán tháng đầu:</span>
+                                <div class="text-2xl md:text-3xl font-black text-brand tracking-tight" id="monthly-payment">833.333 đ</div>
                             </div>
-                            <a href="#list-app" class="w-full md:w-auto bg-primary hover:bg-brand text-white text-center font-bold py-4 px-10 rounded-xl shadow-lg shadow-primary/30 transition-all transform hover:-translate-y-1">
-                                Đăng Ký Ngay
-                            </a>
+                            <a href="#list-app" class="w-full md:w-auto bg-brand hover:bg-slate-800 text-white text-center font-bold py-3.5 px-8 rounded-lg shadow-md transition">Đăng Ký Ngay</a>
                         </div>
                     </div>
                 </div>
@@ -170,205 +112,72 @@
         </div>
     </section>
 
-    <div class="py-16 bg-white/80 backdrop-blur-md shadow-[0_-10px_30px_rgba(0,0,0,0.02)] overflow-hidden">
-        <div class="container mx-auto px-4 text-center mb-10">
-            <span class="inline-block text-xs font-bold text-slate-400 uppercase tracking-[0.3em] border-b-2 border-slate-100 pb-2">Mạng lưới 20+ Đối tác tin cậy</span>
-        </div>
-        
+    <div class="py-10 bg-white border-y border-slate-200 overflow-hidden">
         <div class="relative w-full flex overflow-hidden group">
-            <div class="animate-marquee whitespace-nowrap flex items-center gap-20 min-w-full pl-4">
-                <span class="text-2xl font-bold text-[#005A3C] flex items-center gap-3 hover:scale-105 transition filter grayscale hover:grayscale-0"><i class="fa-solid fa-building-columns text-3xl"></i> Vietcombank</span>
-                <span class="text-2xl font-bold text-[#E30613] flex items-center gap-3 hover:scale-105 transition filter grayscale hover:grayscale-0"><i class="fa-solid fa-building-columns text-3xl"></i> Techcombank</span>
-                <span class="text-2xl font-bold text-[#00B14F] flex items-center gap-3 hover:scale-105 transition filter grayscale hover:grayscale-0"><i class="fa-solid fa-building-columns text-3xl"></i> VPBank</span>
-                <span class="text-2xl font-bold text-[#183281] flex items-center gap-3 hover:scale-105 transition filter grayscale hover:grayscale-0"><i class="fa-solid fa-building-columns text-3xl"></i> MBBank</span>
-                <span class="text-2xl font-bold text-[#6F2C91] flex items-center gap-3 hover:scale-105 transition filter grayscale hover:grayscale-0"><i class="fa-solid fa-building-columns text-3xl"></i> TPBank</span>
-                <span class="text-2xl font-bold text-[#A50064] flex items-center gap-3 hover:scale-105 transition filter grayscale hover:grayscale-0"><i class="fa-solid fa-wallet text-3xl"></i> MoMo</span>
-                <span class="text-2xl font-bold text-[#0068FF] flex items-center gap-3 hover:scale-105 transition filter grayscale hover:grayscale-0"><i class="fa-solid fa-wallet text-3xl"></i> ZaloPay</span>
+            <div class="animate-marquee whitespace-nowrap flex items-center gap-16 min-w-full pl-4">
+                <span class="text-xl font-bold text-[#005A3C] flex items-center gap-2"><i class="fa-solid fa-building-columns"></i> Vietcombank</span>
+                <span class="text-xl font-bold text-[#E30613] flex items-center gap-2"><i class="fa-solid fa-building-columns"></i> Techcombank</span>
+                <span class="text-xl font-bold text-[#00B14F] flex items-center gap-2"><i class="fa-solid fa-building-columns"></i> VPBank</span>
+                <span class="text-xl font-bold text-[#183281] flex items-center gap-2"><i class="fa-solid fa-building-columns"></i> MBBank</span>
+                <span class="text-xl font-bold text-[#6F2C91] flex items-center gap-2"><i class="fa-solid fa-building-columns"></i> TPBank</span>
+                <span class="text-xl font-bold text-[#A50064] flex items-center gap-2"><i class="fa-solid fa-wallet"></i> MoMo</span>
+                <span class="text-xl font-bold text-[#0068FF] flex items-center gap-2"><i class="fa-solid fa-wallet"></i> ZaloPay</span>
+                <span class="text-xl font-bold text-[#009C45] flex items-center gap-2"><i class="fa-solid fa-credit-card"></i> FE Credit</span>
                 
-                <span class="text-2xl font-bold text-[#005A3C] flex items-center gap-3 filter grayscale hover:grayscale-0"><i class="fa-solid fa-building-columns text-3xl"></i> Vietcombank</span>
-                <span class="text-2xl font-bold text-[#E30613] flex items-center gap-3 filter grayscale hover:grayscale-0"><i class="fa-solid fa-building-columns text-3xl"></i> Techcombank</span>
-                <span class="text-2xl font-bold text-[#00B14F] flex items-center gap-3 filter grayscale hover:grayscale-0"><i class="fa-solid fa-building-columns text-3xl"></i> VPBank</span>
-                <span class="text-2xl font-bold text-[#183281] flex items-center gap-3 filter grayscale hover:grayscale-0"><i class="fa-solid fa-building-columns text-3xl"></i> MBBank</span>
-                <span class="text-2xl font-bold text-[#A50064] flex items-center gap-3 filter grayscale hover:grayscale-0"><i class="fa-solid fa-wallet text-3xl"></i> MoMo</span>
+                <span class="text-xl font-bold text-[#005A3C] flex items-center gap-2"><i class="fa-solid fa-building-columns"></i> Vietcombank</span>
+                <span class="text-xl font-bold text-[#E30613] flex items-center gap-2"><i class="fa-solid fa-building-columns"></i> Techcombank</span>
+                <span class="text-xl font-bold text-[#00B14F] flex items-center gap-2"><i class="fa-solid fa-building-columns"></i> VPBank</span>
+                <span class="text-xl font-bold text-[#183281] flex items-center gap-2"><i class="fa-solid fa-building-columns"></i> MBBank</span>
+                <span class="text-xl font-bold text-[#A50064] flex items-center gap-2"><i class="fa-solid fa-wallet"></i> MoMo</span>
             </div>
         </div>
     </div>
 
-    <section id="loi-ich" class="py-24">
+    <section id="list-app" class="py-20 bg-bg">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl font-black text-brand mb-6">Trải Nghiệm Sự Khác Biệt</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto font-medium">Chúng tôi ứng dụng công nghệ để đơn giản hóa mọi quy trình tài chính phức tạp.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="glass-card p-10 rounded-[2rem] text-center group hover:-translate-y-2 transition-all duration-300 shadow-glass hover:shadow-2xl relative overflow-hidden">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-primary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                    <div class="w-20 h-20 mx-auto bg-blue-500/10 text-primary rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:scale-110 group-hover:rotate-6 transition shadow-sm">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h3 class="font-extrabold text-2xl text-brand mb-4">Bảo Mật 100%</h3>
-                    <p class="text-slate-500 leading-relaxed font-medium">Dữ liệu được mã hóa đầu cuối theo chuẩn SSL Quốc tế. An toàn tuyệt đối.</p>
-                </div>
-                <div class="glass-card p-10 rounded-[2rem] text-center group hover:-translate-y-2 transition-all duration-300 shadow-glass hover:shadow-2xl relative overflow-hidden">
-                     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-400 to-green-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                    <div class="w-20 h-20 mx-auto bg-green-500/10 text-green-600 rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:scale-110 group-hover:rotate-6 transition shadow-sm">
-                        <i class="fa-solid fa-bolt"></i>
-                    </div>
-                    <h3 class="font-extrabold text-2xl text-brand mb-4">Duyệt Siêu Tốc</h3>
-                    <p class="text-slate-500 leading-relaxed font-medium">Hệ thống AI phân tích và trả kết quả hạn mức tín dụng chỉ trong 3 phút.</p>
-                </div>
-                <div class="glass-card p-10 rounded-[2rem] text-center group hover:-translate-y-2 transition-all duration-300 shadow-glass hover:shadow-2xl relative overflow-hidden">
-                     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-orange-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                    <div class="w-20 h-20 mx-auto bg-orange-500/10 text-orange-600 rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:scale-110 group-hover:rotate-6 transition shadow-sm">
-                        <i class="fa-solid fa-fingerprint"></i>
-                    </div>
-                    <h3 class="font-extrabold text-2xl text-brand mb-4">Đơn Giản Hóa</h3>
-                    <p class="text-slate-500 leading-relaxed font-medium">Loại bỏ giấy tờ rườm rà. Quy trình 100% Online chỉ cần CCCD.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="list-app" class="py-24 bg-white/70 backdrop-blur-md shadow-[0_-10px_40px_rgba(0,0,0,0.03)] relative z-10 rounded-t-[3rem]">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <span class="text-primary font-bold text-sm uppercase tracking-widest block mb-3">Lựa chọn thông minh</span>
-                <h2 class="text-4xl font-black text-brand">Gói Tín Dụng Đề Xuất 2025</h2>
-            </div>
-
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-12 max-w-5xl mx-auto">
-                 <div class="flex gap-1 bg-slate-100/80 p-1.5 rounded-xl backdrop-blur-sm">
-                    <button class="px-6 py-3 bg-white text-brand rounded-lg text-sm font-bold shadow-sm">Tất cả</button>
-                    <button class="px-6 py-3 text-slate-500 hover:text-brand hover:bg-white/50 rounded-lg text-sm font-bold transition">Lãi thấp</button>
-                    <button class="px-6 py-3 text-slate-500 hover:text-brand hover:bg-white/50 rounded-lg text-sm font-bold transition">Duyệt nhanh</button>
-                </div>
-                <div class="flex items-center gap-3 text-sm text-blue-800 font-medium bg-blue-100/50 border border-blue-200/50 px-5 py-3 rounded-full backdrop-blur-sm">
-                    <i class="fa-solid fa-lightbulb text-primary text-lg"></i>
-                    <p>Mẹo: Đăng ký <strong>3 - 4 đơn vị</strong> để chắc chắn được duyệt 100%.</p>
-                </div>
-            </div>
-
-            <div id="app-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                <div class="col-span-full py-20 text-center text-slate-400 flex flex-col items-center justify-center">
-                    <i class="fa-solid fa-circle-notch fa-spin text-4xl text-primary mb-4 opacity-50"></i>
-                    <p class="font-medium">Đang tải dữ liệu mới nhất...</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="feedback" class="py-24 relative z-0">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-6">
                 <div>
-                    <span class="text-accent font-bold text-sm uppercase tracking-widest block mb-3">Góc nhìn khách hàng</span>
-                    <h2 class="text-3xl font-black text-brand mb-12">Niềm Tin Được Khẳng Định</h2>
-                    
-                    <div class="space-y-8">
-                        <div class="glass-card p-8 rounded-3xl shadow-sm relative mt-10">
-                            <div class="absolute -top-6 left-8"><i class="fa-solid fa-quote-left text-5xl text-primary/10"></i></div>
-                            <div class="flex gap-1 text-yellow-400 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                            <p class="text-slate-600 italic mb-8 leading-relaxed text-lg font-medium">"Giao diện web rất đẹp và mượt. Mình cần gấp 10 triệu, đăng ký 2 bên là Techcom với MB, 15 phút sau tiền về tài khoản. Quá nhanh!"</p>
-                            <div class="flex items-center gap-4">
-                                <img src="https://i.pravatar.cc/60?img=68" class="w-14 h-14 rounded-full ring-4 ring-white">
-                                <div><p class="font-bold text-brand text-lg">Hoàng Nam</p><p class="text-sm font-bold text-slate-400">TP.HCM - Nhân viên VP</p></div>
-                            </div>
-                        </div>
-                        <div class="glass-card p-8 rounded-3xl shadow-sm relative mt-12 ml-4 md:ml-12">
-                             <div class="absolute -top-6 left-8"><i class="fa-solid fa-quote-left text-5xl text-primary/10"></i></div>
-                            <div class="flex gap-1 text-yellow-400 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                            <p class="text-slate-600 italic mb-8 leading-relaxed text-lg font-medium">"Thích nhất là không bị gọi điện thẩm định người thân. Mọi thứ đều online, lãi suất rõ ràng ngay từ đầu. Rất uy tín."</p>
-                            <div class="flex items-center gap-4">
-                                <img src="https://i.pravatar.cc/60?img=47" class="w-14 h-14 rounded-full ring-4 ring-white">
-                                <div><p class="font-bold text-brand text-lg">Lan Anh</p><p class="text-sm font-bold text-slate-400">Hà Nội - Freelancer</p></div>
-                            </div>
-                        </div>
-                    </div>
+                    <span class="text-accent font-bold text-xs uppercase tracking-widest block mb-2">Đối Tác Chiến Lược</span>
+                    <h2 class="text-3xl font-bold text-brand">Gói Tín Dụng Tốt Nhất 2025</h2>
                 </div>
+                <div class="bg-white p-1 rounded-lg border border-slate-200 inline-flex">
+                    <button class="px-4 py-2 bg-brand text-white text-xs font-bold rounded-md">Tất cả</button>
+                    <button class="px-4 py-2 text-slate-500 hover:text-brand text-xs font-bold transition">0% Lãi</button>
+                </div>
+            </div>
 
-                <div>
-                    <span class="text-accent font-bold text-sm uppercase tracking-widest block mb-3">Hỗ trợ nhanh</span>
-                    <h2 class="text-3xl font-black text-brand mb-12">Câu Hỏi Thường Gặp</h2>
-                    <div class="space-y-5">
-                        <details class="group glass-card p-6 rounded-2xl shadow-sm cursor-pointer transition-all open:shadow-md open:bg-white">
-                            <summary class="flex justify-between items-center font-bold text-brand text-lg list-none">
-                                <span>Điều kiện vay cơ bản là gì?</span>
-                                <span class="transition-transform duration-300 group-open:rotate-180 text-primary bg-primary/10 w-8 h-8 rounded-full flex items-center justify-center"><i class="fa-solid fa-chevron-down"></i></span>
-                            </summary>
-                            <div class="text-slate-600 mt-6 text-base leading-relaxed pl-4 border-l-4 border-primary">
-                                <p>Rất đơn giản. Bạn chỉ cần:</p>
-                                <ul class="list-disc pl-5 mt-2 space-y-1 font-medium">
-                                    <li>Là công dân Việt Nam, độ tuổi 20 - 60.</li>
-                                    <li>Có CCCD/CMND chính chủ (còn hiệu lực).</li>
-                                    <li>Có tài khoản ngân hàng để nhận tiền giải ngân.</li>
-                                </ul>
-                            </div>
-                        </details>
-                        <details class="group glass-card p-6 rounded-2xl shadow-sm cursor-pointer transition-all open:shadow-md open:bg-white">
-                             <summary class="flex justify-between items-center font-bold text-brand text-lg list-none">
-                                <span>Nợ xấu có vay được không?</span>
-                                <span class="transition-transform duration-300 group-open:rotate-180 text-primary bg-primary/10 w-8 h-8 rounded-full flex items-center justify-center"><i class="fa-solid fa-chevron-down"></i></span>
-                            </summary>
-                            <div class="text-slate-600 mt-6 text-base leading-relaxed pl-4 border-l-4 border-primary font-medium">
-                                <p>Có thể. Hệ thống của chúng tôi kết nối với nhiều đối tác tài chính khác nhau. Một số đơn vị vẫn có chính sách hỗ trợ khách hàng có lịch sử nợ xấu nhóm 1, 2 tùy thuộc vào năng lực tài chính hiện tại của bạn.</p>
-                            </div>
-                        </details>
-                        <details class="group glass-card p-6 rounded-2xl shadow-sm cursor-pointer transition-all open:shadow-md open:bg-white">
-                             <summary class="flex justify-between items-center font-bold text-brand text-lg list-none">
-                                <span>Thời gian nhận tiền là bao lâu?</span>
-                                <span class="transition-transform duration-300 group-open:rotate-180 text-primary bg-primary/10 w-8 h-8 rounded-full flex items-center justify-center"><i class="fa-solid fa-chevron-down"></i></span>
-                            </summary>
-                             <div class="text-slate-600 mt-6 text-base leading-relaxed pl-4 border-l-4 border-primary font-medium">
-                                <p>Siêu tốc. Nhờ quy trình xét duyệt tự động bằng AI, thông thường bạn sẽ nhận được tiền giải ngân về tài khoản ngân hàng chỉ từ <strong>15 đến 30 phút</strong> sau khi hồ sơ được phê duyệt.</p>
-                            </div>
-                        </details>
-                    </div>
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-10 flex items-start gap-3">
+                <i class="fa-solid fa-circle-info text-accent mt-0.5"></i>
+                <div class="text-sm text-blue-900"><strong>Khuyến nghị:</strong> Đăng ký đồng thời <strong>3 - 4 đơn vị</strong> khác nhau để tỷ lệ duyệt đạt 100%.</div>
+            </div>
+
+            <div id="app-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div class="col-span-full py-12 text-center text-slate-400">
+                    <i class="fa-solid fa-circle-notch fa-spin text-3xl mb-2"></i>
+                    <p>Đang tải dữ liệu...</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-brand text-slate-400 pt-24 pb-10 mt-auto relative overflow-hidden">
-         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-30"></div>
-         <div class="absolute -top-[200px] left-[-200px] w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
-
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 text-center md:text-left">
+    <footer class="bg-brand text-slate-400 pt-16 pb-8 mt-auto">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 text-center md:text-left">
                 <div class="col-span-1 md:col-span-1">
-                    <a href="#" class="flex items-center justify-center md:justify-start gap-3 mb-8 text-white group">
-                        <div class="w-10 h-10 bg-gradient-to-tr from-primary to-accent text-white rounded-xl flex items-center justify-center text-xl shadow-neon group-hover:scale-110 transition">
-                            <i class="fa-solid fa-robot"></i>
-                        </div>
-                        <span class="font-black text-2xl">TaiChinh247</span>
-                    </a>
-                    <p class="text-sm leading-relaxed opacity-80 font-medium mb-6">Cổng thông tin tài chính độc lập hàng đầu Việt Nam. Chúng tôi sử dụng công nghệ để kết nối bạn với các giải pháp tín dụng an toàn, minh bạch nhất.</p>
-                    <div class="flex justify-center md:justify-start gap-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition hover:-translate-y-1"><i class="fa-brands fa-facebook-f text-white"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition hover:-translate-y-1"><i class="fa-brands fa-twitter text-white"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition hover:-translate-y-1"><i class="fa-brands fa-linkedin-in text-white"></i></a>
-                    </div>
+                    <span class="font-bold text-xl text-white block mb-4">TaiChinh247</span>
+                    <p class="text-xs leading-relaxed opacity-70">Kết nối khách hàng với các giải pháp tín dụng an toàn.</p>
                 </div>
-                <div><h4 class="font-bold text-white mb-6 text-sm uppercase tracking-wider">Sản Phẩm</h4><ul class="space-y-4 text-sm font-medium"><li><a href="#" class="hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-slate-600"></i> Vay tín chấp</a></li><li><a href="#" class="hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-slate-600"></i> Mở thẻ tín dụng</a></li><li><a href="#" class="hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-slate-600"></i> Vay mua trả góp</a></li></ul></div>
-                <div><h4 class="font-bold text-white mb-6 text-sm uppercase tracking-wider">Điều Khoản & Chính Sách</h4><ul class="space-y-4 text-sm font-medium"><li><a href="#" class="hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-slate-600"></i> Chính sách bảo mật</a></li><li><a href="#" class="hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-slate-600"></i> Điều khoản sử dụng</a></li><li><a href="#" class="hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-slate-600"></i> Miễn trừ trách nhiệm</a></li></ul></div>
-                <div><h4 class="font-bold text-white mb-6 text-sm uppercase tracking-wider">Liên Hệ Hỗ Trợ</h4><ul class="space-y-4 text-sm font-medium"><li class="flex justify-center md:justify-start gap-3 items-center"><i class="fa-solid fa-envelope text-primary"></i> support@taichinh247.vn</li><li class="flex justify-center md:justify-start gap-3 items-start"><i class="fa-solid fa-location-dot text-primary mt-1"></i> Tòa nhà Bitexco, Quận 1, TP.HCM</li><li class="flex justify-center md:justify-start gap-3 items-center"><i class="fa-solid fa-phone text-primary"></i> 1900 1234 567</li></ul></div>
+                <div><h4 class="font-bold text-white mb-4 text-xs uppercase tracking-wider">Sản Phẩm</h4><ul class="space-y-2 text-xs"><li>Vay tín chấp</li><li>Mở thẻ tín dụng</li></ul></div>
+                <div><h4 class="font-bold text-white mb-4 text-xs uppercase tracking-wider">Pháp Lý</h4><ul class="space-y-2 text-xs"><li>Bảo mật</li><li>Điều khoản</li></ul></div>
+                <div><h4 class="font-bold text-white mb-4 text-xs uppercase tracking-wider">Liên Hệ</h4><ul class="space-y-2 text-xs"><li>support@taichinh247.vn</li><li>TP.HCM</li></ul></div>
             </div>
-            <div class="border-t border-slate-800/50 pt-10 text-sm text-center opacity-60 flex flex-col md:flex-row justify-between items-center gap-4 font-medium">
-                <p>© 2025 TaiChinh247. All rights reserved.</p>
-                <p>Lãi suất (APR) tối đa 20%/năm. Kỳ hạn 3 - 36 tháng.</p>
-            </div>
+            <div class="border-t border-slate-800 pt-8 text-center text-xs opacity-50"><p>© 2025 TaiChinh247. All rights reserved.</p></div>
         </div>
     </footer>
 
-    <div class="fixed bottom-8 right-8 flex flex-col gap-4 z-50">
-        <a href="#" class="w-14 h-14 bg-white text-blue-600 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition ring-2 ring-blue-100 hover:ring-blue-300 animate-bounce animation-delay-2000 relative group">
-             <span class="absolute right-full mr-4 bg-white text-slate-700 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm opacity-0 group-hover:opacity-100 transition whitespace-nowrap pointer-events-none">Chat Zalo</span>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/1200px-Icon_of_Zalo.svg.png" class="w-8 h-8">
-        </a>
-        <a href="#" class="w-14 h-14 bg-gradient-to-tr from-primary to-accent text-white rounded-full flex items-center justify-center shadow-lg shadow-primary/40 hover:scale-110 transition animate-pulse relative group">
-            <span class="absolute right-full mr-4 bg-white text-slate-700 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm opacity-0 group-hover:opacity-100 transition whitespace-nowrap pointer-events-none">Gọi Ngay</span>
-            <i class="fa-solid fa-phone text-2xl"></i>
-        </a>
+    <div class="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
+        <a href="#" class="w-12 h-12 bg-white text-blue-600 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/1200px-Icon_of_Zalo.svg.png" class="w-6 h-6"></a>
+        <a href="#" class="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition"><i class="fa-solid fa-phone text-lg"></i></a>
     </div>
 
     <script>
@@ -381,27 +190,27 @@
             const payment = Math.round(totalAmount / months);
             const formatMoney = (num) => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
             document.getElementById('monthly-payment').innerText = formatMoney(payment) + ' đ';
-            const fakeOriginal = Math.round(payment * 1.15);
-            document.getElementById('total-original').innerText = formatMoney(fakeOriginal) + ' đ';
         }
         window.onload = calculateLoan;
     </script>
+
+    <script src="data.js"></script>
+    <script src="main.js"></script>
     <script>
-        // Giả lập hàm renderHomeGrid để không bị lỗi nếu chưa có file main.js
-        if(typeof renderHomeGrid !== 'function') {
-            window.renderHomeGrid = function(id) {
-                 console.log("Đang chờ file main.js để load dữ liệu vào: " + id);
-                 // Khi có file main.js thật, dòng này sẽ bị đè và code thật sẽ chạy.
-                 document.getElementById(id).innerHTML = `
-                    <div class="col-span-full py-20 text-center text-slate-400 flex flex-col items-center justify-center">
-                        <i class="fa-solid fa-triangle-exclamation text-4xl text-yellow-500 mb-4"></i>
-                        <p class="font-bold text-slate-600">Chưa kết nối dữ liệu (data.js / main.js)</p>
-                        <p class="text-sm mt-2">Vui lòng thêm file dữ liệu để hiển thị các gói vay.</p>
+        // Chạy hàm render khi tải xong
+        document.addEventListener('DOMContentLoaded', () => { 
+            if(typeof renderHomeGrid === 'function') {
+                renderHomeGrid('app-grid'); 
+            } else {
+                // Nếu main.js chưa load được, hiện thông báo lỗi rõ ràng thay vì icon xoay
+                document.getElementById('app-grid').innerHTML = `
+                    <div class="col-span-full text-center py-10">
+                        <p class="text-red-500 font-bold">⚠️ Lỗi kết nối dữ liệu!</p>
+                        <p class="text-sm text-slate-500">Vui lòng kiểm tra xem bạn đã tạo file <b>main.js</b> và <b>data.js</b> trên GitHub chưa.</p>
                     </div>
-                 `;
+                `;
             }
-        }
-        document.addEventListener('DOMContentLoaded', () => { renderHomeGrid('app-grid'); });
+        });
     </script>
 </body>
 </html>
