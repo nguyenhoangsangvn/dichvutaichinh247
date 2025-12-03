@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>So Sánh Gói Vay - TaiChinh247</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Be Vietnam Pro', 'sans-serif'] },
+                    colors: { brand: '#0F172A', accent: '#2563EB', bg: '#F1F5F9' },
+                    boxShadow: { 'float': '0 20px 40px -10px rgba(0, 0, 0, 0.1)' },
+                    animation: { marquee: 'marquee 40s linear infinite' },
+                    keyframes: { marquee: { '0%': { transform: 'translateX(0%)' }, '100%': { transform: 'translateX(-100%)' } } }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #F1F5F9; color: #334155; }
+        input[type=range] { -webkit-appearance: none; background: transparent; cursor: pointer; }
+        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 24px; width: 24px; border-radius: 50%; background: #2563EB; border: 4px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.2); margin-top: -10px; }
+        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; background: #CBD5E1; border-radius: 2px; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <header class="fixed top-0 w-full z-50 bg-white border-b border-slate-200 h-16 shadow-sm flex items-center">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 text-slate-500 hover:text-accent transition font-bold text-sm">
+                <i class="fa-solid fa-arrow-left"></i> Trang chủ
+            </a>
+            <span class="font-extrabold text-brand text-lg">Kết Quả Tra Cứu</span>
+            <div class="w-16"></div> </div>
+    </header>
+
+    <section class="pt-28 pb-10 px-4">
+        <div class="container mx-auto">
+            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-float border border-white flex flex-col lg:flex-row items-center gap-12 relative overflow-hidden">
+                <div class="w-full lg:w-5/12 relative z-10 text-center lg:text-left">
+                    <h1 class="text-3xl md:text-4xl font-black text-brand mb-4">Hồ sơ của bạn đã sẵn sàng!</h1>
+                    <p class="text-slate-500 mb-6">Dựa trên thông tin sơ bộ, hệ thống đề xuất các gói vay dưới đây với tỷ lệ duyệt <strong>99%</strong>.</p>
+                    <div class="flex justify-center lg:justify-start gap-8 border-t border-slate-100 pt-6">
+                        <div><p class="text-2xl font-bold text-brand">20+</p><p class="text-[10px] uppercase font-bold text-slate-400">Đối tác</p></div>
+                        <div><p class="text-2xl font-bold text-brand">15p</p><p class="text-[10px] uppercase font-bold text-slate-400">Giải ngân</p></div>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-7/12 relative z-10">
+                    <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6">
+                        <div class="flex justify-between items-center mb-6 border-b border-slate-200 pb-4">
+                            <h3 class="font-bold text-brand flex items-center gap-2"><i class="fa-solid fa-sliders"></i> Tùy chỉnh khoản vay</h3>
+                        </div>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-2"><span class="text-xs font-bold text-slate-500 uppercase">Số tiền</span><span class="text-lg font-bold text-accent" id="amount-display">10.000.000 đ</span></div>
+                                <input type="range" min="1" max="70" value="10" class="w-full" id="amount-range" oninput="calculateLoan()">
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2"><span class="text-xs font-bold text-slate-500 uppercase">Thời hạn</span><span class="text-lg font-bold text-accent" id="month-display">12 Tháng</span></div>
+                                <input type="range" min="1" max="36" value="12" class="w-full" id="month-range" oninput="calculateLoan()">
+                            </div>
+                        </div>
+                        <div class="mt-6 bg-white p-4 rounded-xl border border-slate-200 flex justify-between items-center">
+                            <div><span class="text-xs text-slate-500 block">Trả góp tháng:</span><span class="text-2xl font-black text-brand" id="monthly-payment">833.333 đ</span></div>
+                            <div class="text-xs text-green-600 font-bold bg-green-50 px-3 py-1 rounded-full">0% Lãi kỳ đầu</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="py-8 bg-white border-y border-slate-200 overflow-hidden">
+        <div class="relative w-full flex overflow-hidden group">
+            <div class="animate-marquee whitespace-nowrap flex items-center gap-12 min-w-full pl-4">
+                 <span class="text-xl font-bold text-[#005A3C] flex items-center gap-2"><i class="fa-solid fa-building-columns"></i> Vietcombank</span>
+                 <span class="text-xl font-bold text-[#E30613] flex items-center gap-2"><i class="fa-solid fa-building-columns"></i> Techcombank</span>
+                 <span class="text-xl font-bold text-[#00B14F] flex items-center gap-2"><i class="fa-solid fa-building-columns"></i> VPBank</span>
+                 <span class="text-xl font-bold text-[#183281] flex items-center gap-2"><i class="fa-solid fa-building-columns"></i> MBBank</span>
+                 <span class="text-xl font-bold text-[#A50064] flex items-center gap-2"><i class="fa-solid fa-wallet"></i> MoMo</span>
+                 <span class="text-xl font-bold text-[#005A3C] flex items-center gap-2"><i class="fa-solid fa-building-columns"></i> Vietcombank</span>
+                 <span class="text-xl font-bold text-[#E30613] flex items-center gap-2"><i class="fa-solid fa-building-columns"></i> Techcombank</span>
+                 <span class="text-xl font-bold text-[#00B14F] flex items-center gap-2"><i class="fa-solid fa-building-columns"></i> VPBank</span>
+            </div>
+        </div>
+    </div>
+
+    <section id="list-app" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-end mb-8">
+                <h2 class="text-2xl font-bold text-brand">Gói Vay Phù Hợp Nhất</h2>
+            </div>
+            
+            <div id="app-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div class="col-span-full text-center py-12"><i class="fa-solid fa-circle-notch fa-spin text-2xl text-slate-400"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function calculateLoan() {
+            const amount = document.getElementById('amount-range').value;
+            const months = document.getElementById('month-range').value;
+            document.getElementById('amount-display').innerText = amount + '.000.000 đ';
+            document.getElementById('month-display').innerText = months + ' Tháng';
+            const totalAmount = parseInt(amount) * 1000000;
+            const payment = Math.round(totalAmount / months);
+            const formatMoney = (num) => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            document.getElementById('monthly-payment').innerText = formatMoney(payment) + ' đ';
+        }
+        window.onload = calculateLoan;
+    </script>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', () => { if(typeof renderHomeGrid === 'function') renderHomeGrid('app-grid'); });</script>
+</body>
+</html>
